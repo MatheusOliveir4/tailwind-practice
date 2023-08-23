@@ -1,9 +1,18 @@
 import { Input } from '@/components/Input'
 import { SettingsTabs } from '@/components/SettingsTabs'
-import { ChevronDown, Mail } from 'lucide-react'
+import {
+  Bold,
+  ChevronDown,
+  Italic,
+  Link,
+  List,
+  ListOrdered,
+  Mail,
+} from 'lucide-react'
 import * as FileInput from '@/components/Form/FileInput'
 import { Select } from '@/components/Form/Select'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
+import { Textarea } from '@/components/Form/Textarea'
 
 export default function Home() {
   return (
@@ -143,7 +152,67 @@ export default function Home() {
                 Write a short introduction.
               </span>
             </label>
-            <div></div>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <Select placeholder="" defaultValue="normal">
+                  <SelectItem value="normal" text="Normal Text" />
+                  <SelectItem value="md" text="Markdown" />
+                </Select>
+
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Bold
+                      className="h-4 w-4 text-zinc-500 group-hover:text-red-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Italic
+                      className="h-4 w-4 text-zinc-500 group-hover:text-red-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Link
+                      className="h-4 w-4 text-zinc-500 group-hover:text-red-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <List
+                      className="h-4 w-4 text-zinc-500 group-hover:text-red-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <ListOrdered
+                      className="h-4 w-4 text-zinc-500 group-hover:text-red-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <Textarea
+                id="bio"
+                defaultValue="Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quae, ad velit obcaecati ut temporibus. Magnam architecto nihil, exercitationem repellat praesentium quasi quas nemo nostrum reprehenderit sequi libero ducimus dignissimos."
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
